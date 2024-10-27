@@ -15,8 +15,14 @@ form.addEventListener("submit", (event) => {
 
     // Handle division by zero
     if (divider === 0) {
+      console.error("Division by zero error");
       result.innerText = "Division not performed. Invalid number provided. Try again";
       return;
+    }
+
+    // Validate input type
+    if (isNaN(dividend) || isNaN(divider)) {
+      throw new Error("Non-numeric input provided.");
     }
 
     result.innerText = Math.floor(dividend / divider); // Rounds down the result
