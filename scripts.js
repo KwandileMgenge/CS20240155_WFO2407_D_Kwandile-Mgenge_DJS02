@@ -14,7 +14,7 @@ form.addEventListener("submit", (event) => {
     }
 
     // Handle division by zero
-    if (divider === 0) {
+    if (parseFloat(divider) === 0) {
       console.error("Division by zero error");
       result.innerText = "Division not performed. Invalid number provided. Try again";
       return;
