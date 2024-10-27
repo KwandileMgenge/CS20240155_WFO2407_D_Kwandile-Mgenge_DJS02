@@ -7,8 +7,15 @@ form.addEventListener("submit", (event) => {
   const { dividend, divider } = Object.fromEntries(entries);
 
   try {
+    // Validate input presence
     if (!dividend || !divider) {
       result.innerText = "Division not performed. Both values are required in inputs. Try again";
+      return;
+    }
+
+    // Handle division by zero
+    if (divider === 0) {
+      result.innerText = "Division not performed. Invalid number provided. Try again";
       return;
     }
 
